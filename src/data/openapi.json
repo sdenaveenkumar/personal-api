@@ -1,0 +1,235 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Naveen Kumar - Personal API",
+    "description": "Production-grade, extensible RESTful Personal API for Naveen Kumar (Software Development Engineer). Provides structured endpoints for profile, bio, technical skills, projects, academics & marks ledger, work experience, education, stats, and contact.",
+    "version": "1.1.0",
+    "contact": {
+      "name": "Naveen Kumar",
+      "email": "sde.naveenkumar@gmail.com",
+      "url": "https://github.com/sdenaveenkumar"
+    },
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "servers": [
+    {
+      "url": "/api/v1",
+      "description": "API v1 Base Endpoint"
+    }
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "summary": "API Directory & Meta Index",
+        "description": "Returns the API root index with a complete map of available endpoints and server status.",
+        "responses": {
+          "200": { "description": "Successful operation" }
+        }
+      }
+    },
+    "/profile": {
+      "get": {
+        "summary": "Get Naveen's Full Profile",
+        "description": "Returns identity, title, location, status, work preferences, and core details.",
+        "responses": {
+          "200": { "description": "Profile payload" }
+        }
+      }
+    },
+    "/bio": {
+      "get": {
+        "summary": "Get Developer Bio",
+        "description": "Returns short, medium, long, and markdown versions of Naveen's bio.",
+        "parameters": [
+          { "name": "format", "in": "query", "schema": { "type": "string" }, "description": "short, medium, long, or markdown" }
+        ],
+        "responses": {
+          "200": { "description": "Bio payload" }
+        }
+      }
+    },
+    "/skills": {
+      "get": {
+        "summary": "Get Technical Skills",
+        "description": "Returns categorized technical skills with proficiency levels.",
+        "parameters": [
+          { "name": "category", "in": "query", "schema": { "type": "string" }, "description": "Filter by category: languages, frontend, backend, csFundamentals, devopsAndTools, creativeAnd3d" },
+          { "name": "featured", "in": "query", "schema": { "type": "boolean" }, "description": "Filter only featured skills" }
+        ],
+        "responses": {
+          "200": { "description": "Skills payload" }
+        }
+      }
+    },
+    "/projects": {
+      "get": {
+        "summary": "Get Projects Portfolio",
+        "description": "Returns a list of curated software projects with tags, github links, live links, and highlights.",
+        "parameters": [
+          { "name": "tag", "in": "query", "schema": { "type": "string" } },
+          { "name": "featured", "in": "query", "schema": { "type": "boolean" } },
+          { "name": "q", "in": "query", "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "Projects list" }
+        }
+      }
+    },
+    "/projects/{slug}": {
+      "get": {
+        "summary": "Get Project by Slug",
+        "parameters": [
+          { "name": "slug", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "Project details" },
+          "404": { "description": "Project not found" }
+        }
+      }
+    },
+    "/academics": {
+      "get": {
+        "summary": "Get Full Academic Ledger & Marks",
+        "description": "Returns complete Manipal University Jaipur BCA academic transcript data, semester SGPA, and course scores.",
+        "responses": {
+          "200": { "description": "Academic records" }
+        }
+      }
+    },
+    "/academics/summary": {
+      "get": {
+        "summary": "Get Academic Performance Summary",
+        "description": "Returns overall CGPA (8.82), academic standing (Distinction), credits, and highest scoring courses.",
+        "responses": {
+          "200": { "description": "Academic summary" }
+        }
+      }
+    },
+    "/academics/semesters": {
+      "get": {
+        "summary": "List All Semesters",
+        "description": "Returns list of all BCA semesters (1 through 6) with SGPA and published exam sessions.",
+        "responses": {
+          "200": { "description": "Semesters list" }
+        }
+      }
+    },
+    "/academics/semesters/{semId}": {
+      "get": {
+        "summary": "Get Semester Marks by ID",
+        "parameters": [
+          { "name": "semId", "in": "path", "required": true, "schema": { "type": "integer" }, "description": "Semester number (1 to 6)" }
+        ],
+        "responses": {
+          "200": { "description": "Semester record" },
+          "404": { "description": "Semester not found" }
+        }
+      }
+    },
+    "/academics/courses": {
+      "get": {
+        "summary": "Query and Filter Courses",
+        "parameters": [
+          { "name": "grade", "in": "query", "schema": { "type": "string" }, "description": "Filter by grade (e.g. A+, A, B+)" },
+          { "name": "semester", "in": "query", "schema": { "type": "integer" } },
+          { "name": "minScore", "in": "query", "schema": { "type": "integer" } },
+          { "name": "q", "in": "query", "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "Filtered courses list" }
+        }
+      }
+    },
+    "/experience": {
+      "get": {
+        "summary": "Get Work Experience",
+        "responses": {
+          "200": { "description": "Experience list" }
+        }
+      }
+    },
+    "/education": {
+      "get": {
+        "summary": "Get Education & Credentials",
+        "responses": {
+          "200": { "description": "Education list" }
+        }
+      }
+    },
+    "/socials": {
+      "get": {
+        "summary": "Get Social Links",
+        "responses": {
+          "200": { "description": "Socials list" }
+        }
+      }
+    },
+    "/stats": {
+      "get": {
+        "summary": "Get Live System & API Stats",
+        "responses": {
+          "200": { "description": "Server statistics" }
+        }
+      }
+    },
+    "/philosophy": {
+      "get": {
+        "summary": "Get Engineering Philosophy",
+        "responses": {
+          "200": { "description": "Philosophy payload" }
+        }
+      }
+    },
+    "/hobbies": {
+      "get": {
+        "summary": "Get Interests & Hobbies",
+        "responses": {
+          "200": { "description": "Hobbies payload" }
+        }
+      }
+    },
+    "/resume": {
+      "get": {
+        "summary": "Get Resume Payload",
+        "responses": {
+          "200": { "description": "Resume payload" }
+        }
+      }
+    },
+    "/contact": {
+      "get": {
+        "summary": "Get Contact Information",
+        "responses": {
+          "200": { "description": "Contact info" }
+        }
+      },
+      "post": {
+        "summary": "Submit a Contact Message",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["name", "email", "message"],
+                "properties": {
+                  "name": { "type": "string" },
+                  "email": { "type": "string" },
+                  "subject": { "type": "string" },
+                  "message": { "type": "string" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Message received" },
+          "400": { "description": "Validation error" }
+        }
+      }
+    }
+  }
+}

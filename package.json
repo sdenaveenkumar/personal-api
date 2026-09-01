@@ -1,0 +1,31 @@
+{
+  "name": "naveen-kumar-personal-api",
+  "version": "1.0.0",
+  "description": "Production-grade, extensible Personal API & Interactive Playground for Naveen Kumar (Software Development Engineer)",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "test": "node tests/api.test.js"
+  },
+  "keywords": [
+    "personal-api",
+    "developer-portfolio",
+    "rest-api",
+    "express",
+    "openapi",
+    "naveen-kumar",
+    "sde"
+  ],
+  "author": "Naveen Kumar <sde.naveenkumar@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "compression": "^1.7.5",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "helmet": "^8.0.0",
+    "morgan": "^1.10.0"
+  }
+}

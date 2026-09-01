@@ -1,0 +1,268 @@
+{
+  "institution": {
+    "name": "Manipal University Jaipur",
+    "program": "Bachelor of Computer Applications (BCA)",
+    "studentName": "Naveen Kumar",
+    "rollNumber": "2414XXXXXX",
+    "currentSemester": 6,
+    "status": "In Progress (6th Semester; 5th Semester Exams Completed)"
+  },
+  "summary": {
+    "overallCGPA": 8.82,
+    "academicStanding": "Distinction",
+    "totalPublishedSemesters": 4,
+    "totalCoursesCompleted": 22,
+    "totalCreditsCompleted": 88,
+    "passRate": "100%",
+    "gradeDistribution": {
+      "A+": 7,
+      "A": 9,
+      "B+": 5,
+      "C+": 1
+    },
+    "highestScoringCourses": [
+      { "code": "DCA2231", "name": "System Software Programming – Practical", "score": 100, "grade": "A+", "semester": 4 },
+      { "code": "DCA2130", "name": "DBMS – Practical", "score": 96, "grade": "A+", "semester": 3 },
+      { "code": "DCA1103", "name": "Basic Mathematics", "score": 94, "grade": "A+", "semester": 1 },
+      { "code": "DCA1102", "name": "Programming in C", "score": 93, "grade": "A+", "semester": 1 },
+      { "code": "DCA1230", "name": "DSA using C++ - Practical", "score": 92, "grade": "A+", "semester": 2 },
+      { "code": "DCA2103", "name": "Computer Organization", "score": 90, "grade": "A+", "semester": 3 }
+    ]
+  },
+  "semesters": [
+    {
+      "semester": 1,
+      "title": "Semester-1",
+      "examSession": "August - September 2024",
+      "publishedDate": "2024-11-06",
+      "sgpa": 9.50,
+      "status": "Completed",
+      "courses": [
+        {
+          "code": "DCA1101",
+          "name": "Fundamentals of IT & Programming",
+          "external": { "max": 70, "min": 28, "obtained": 60, "result": "P" },
+          "internal": { "max": 30, "min": 12, "obtained": 23, "result": "P" },
+          "total": 83,
+          "grade": "A"
+        },
+        {
+          "code": "DCA1102",
+          "name": "Programming in C",
+          "external": { "max": 70, "min": 28, "obtained": 66, "result": "P" },
+          "internal": { "max": 30, "min": 12, "obtained": 27, "result": "P" },
+          "total": 93,
+          "grade": "A+"
+        },
+        {
+          "code": "DCA1103",
+          "name": "Basic Mathematics",
+          "external": { "max": 70, "min": 28, "obtained": 64, "result": "P" },
+          "internal": { "max": 30, "min": 12, "obtained": 30, "result": "P" },
+          "total": 94,
+          "grade": "A+"
+        },
+        {
+          "code": "DCA1104",
+          "name": "Understanding PC & Troubleshooting",
+          "external": { "max": 70, "min": 28, "obtained": 60, "result": "P" },
+          "internal": { "max": 30, "min": 12, "obtained": 26, "result": "P" },
+          "total": 86,
+          "grade": "A"
+        },
+        {
+          "code": "DCA1130",
+          "name": "Programming in C – Practical",
+          "external": { "max": 30, "min": 12, "obtained": 26, "result": "P" },
+          "internal": { "max": 70, "min": 28, "obtained": 55, "result": "P" },
+          "total": 81,
+          "grade": "A"
+        }
+      ]
+    },
+    {
+      "semester": 2,
+      "title": "Semester-2",
+      "examSession": "February - March 2025",
+      "publishedDate": "2025-05-30",
+      "sgpa": 8.55,
+      "status": "Completed",
+      "courses": [
+        {
+          "code": "DCA1201",
+          "name": "Operating System",
+          "external": { "max": 70, "min": 28, "obtained": 54, "result": "P" },
+          "internal": { "max": 30, "min": 12, "obtained": 23, "result": "P" },
+          "total": 77,
+          "grade": "B+"
+        },
+        {
+          "code": "DCA1202",
+          "name": "Data Structures and Algorithms",
+          "external": { "max": 70, "min": 28, "obtained": 56, "result": "P" },
+          "internal": { "max": 30, "min": 12, "obtained": 23, "result": "P" },
+          "total": 79,
+          "grade": "B+"
+        },
+        {
+          "code": "DCA1203",
+          "name": "Object Oriented Programming – C++",
+          "external": { "max": 70, "min": 28, "obtained": 54, "result": "P" },
+          "internal": { "max": 30, "min": 12, "obtained": 23, "result": "P" },
+          "total": 77,
+          "grade": "B+"
+        },
+        {
+          "code": "DCA1204",
+          "name": "Communication Skills & Personality Dev",
+          "external": { "max": 70, "min": 28, "obtained": 60, "result": "P" },
+          "internal": { "max": 30, "min": 12, "obtained": 23, "result": "P" },
+          "total": 83,
+          "grade": "A"
+        },
+        {
+          "code": "DCA1205",
+          "name": "Digital Logic",
+          "external": { "max": 70, "min": 28, "obtained": 59, "result": "P" },
+          "internal": { "max": 30, "min": 12, "obtained": 21, "result": "P" },
+          "total": 80,
+          "grade": "A"
+        },
+        {
+          "code": "DCA1230",
+          "name": "DSA using C++ - Practical",
+          "external": { "max": 30, "min": 12, "obtained": 24, "result": "P" },
+          "internal": { "max": 70, "min": 28, "obtained": 68, "result": "P" },
+          "total": 92,
+          "grade": "A+"
+        }
+      ]
+    },
+    {
+      "semester": 3,
+      "title": "Semester-3",
+      "examSession": "July - August 2025",
+      "publishedDate": "2025-11-05",
+      "sgpa": 9.11,
+      "status": "Completed",
+      "courses": [
+        {
+          "code": "DCA2101",
+          "name": "Computer Oriented Numerical Methods",
+          "external": { "max": 70, "min": 28, "obtained": 57, "result": "P" },
+          "internal": { "max": 30, "min": 12, "obtained": 25, "result": "P" },
+          "total": 82,
+          "grade": "A"
+        },
+        {
+          "code": "DCA2102",
+          "name": "DBMS",
+          "external": { "max": 70, "min": 28, "obtained": 60, "result": "P" },
+          "internal": { "max": 30, "min": 12, "obtained": 25, "result": "P" },
+          "total": 85,
+          "grade": "A"
+        },
+        {
+          "code": "DCA2103",
+          "name": "Computer Organization",
+          "external": { "max": 70, "min": 28, "obtained": 64, "result": "P" },
+          "internal": { "max": 30, "min": 12, "obtained": 26, "result": "P" },
+          "total": 90,
+          "grade": "A+"
+        },
+        {
+          "code": "DCA2104",
+          "name": "Basics of Data Communication",
+          "external": { "max": 70, "min": 28, "obtained": 55, "result": "P" },
+          "internal": { "max": 30, "min": 12, "obtained": 24, "result": "P" },
+          "total": 79,
+          "grade": "B+"
+        },
+        {
+          "code": "DCA2130",
+          "name": "DBMS – Practical",
+          "external": { "max": 30, "min": 12, "obtained": 27, "result": "P" },
+          "internal": { "max": 70, "min": 28, "obtained": 69, "result": "P" },
+          "total": 96,
+          "grade": "A+"
+        }
+      ]
+    },
+    {
+      "semester": 4,
+      "title": "Semester-4",
+      "examSession": "February - March 2026",
+      "publishedDate": "2026-04-23",
+      "sgpa": 8.10,
+      "status": "Completed",
+      "courses": [
+        {
+          "code": "DCA2201",
+          "name": "Computer Networking",
+          "external": { "max": 70, "min": 28, "obtained": 49, "result": "P" },
+          "internal": { "max": 30, "min": 12, "obtained": 26, "result": "P" },
+          "total": 75,
+          "grade": "B+"
+        },
+        {
+          "code": "DCA2202",
+          "name": "Java Programming",
+          "external": { "max": 70, "min": 28, "obtained": 53, "result": "P" },
+          "internal": { "max": 30, "min": 12, "obtained": 24, "result": "P" },
+          "total": 77,
+          "grade": "B+"
+        },
+        {
+          "code": "DCA2203",
+          "name": "System Software",
+          "external": { "max": 70, "min": 28, "obtained": 60, "result": "P" },
+          "internal": { "max": 30, "min": 12, "obtained": 24, "result": "P" },
+          "total": 84,
+          "grade": "A"
+        },
+        {
+          "code": "DCA2204",
+          "name": "Principles of Financial Accounting and Management",
+          "external": { "max": 70, "min": 28, "obtained": 50, "result": "P" },
+          "internal": { "max": 30, "min": 12, "obtained": 19, "result": "P" },
+          "total": 69,
+          "grade": "C+"
+        },
+        {
+          "code": "DCA2230",
+          "name": "Java Programming – Practical",
+          "external": { "max": 30, "min": 12, "obtained": 30, "result": "P" },
+          "internal": { "max": 70, "min": 28, "obtained": 54, "result": "P" },
+          "total": 84,
+          "grade": "A"
+        },
+        {
+          "code": "DCA2231",
+          "name": "System Software Programming – Practical",
+          "external": { "max": 30, "min": 12, "obtained": 30, "result": "P" },
+          "internal": { "max": 70, "min": 28, "obtained": 70, "result": "P" },
+          "total": 100,
+          "grade": "A+"
+        }
+      ]
+    },
+    {
+      "semester": 5,
+      "title": "Semester-5",
+      "examSession": "July - August 2026",
+      "publishedDate": null,
+      "sgpa": null,
+      "status": "Examinations Completed (Awaiting Published Ledger)",
+      "courses": []
+    },
+    {
+      "semester": 6,
+      "title": "Semester-6",
+      "examSession": "2026 - 2027",
+      "publishedDate": null,
+      "sgpa": null,
+      "status": "In Progress (Current Semester)",
+      "courses": []
+    }
+  ]
+}

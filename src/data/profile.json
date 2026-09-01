@@ -1,0 +1,365 @@
+{
+  "identity": {
+    "name": "Naveen Kumar",
+    "preferredName": "Naveen",
+    "title": "Software Development Engineer (SDE)",
+    "headline": "Building High-Performance Full-Stack Applications, Modern Frontend Architectures & Creative Web Experiences",
+    "status": "Available for high-impact software engineering opportunities & collaborations",
+    "email": "sde.naveenkumar@gmail.com",
+    "location": {
+      "city": "Bengaluru",
+      "country": "India",
+      "timezone": "Asia/Kolkata (IST / UTC+5:30)"
+    },
+    "openToWork": true,
+    "workPreferences": ["Remote", "Hybrid", "Full-time", "Contract", "Internship"],
+    "languages": [
+      { "language": "English", "proficiency": "Professional Working" },
+      { "language": "Hindi", "proficiency": "Native / Fluent" }
+    ],
+    "avatar": "https://api.dicebear.com/7.x/bottts/svg?seed=sdenaveenkumar",
+    "website": "https://github.com/sdenaveenkumar"
+  },
+  "bio": {
+    "short": "Software Development Engineer specializing in React 19, Node.js, and modern full-stack architectures. BCA undergraduate at Manipal University (6th Semester).",
+    "medium": "Naveen Kumar is a Software Development Engineer and final-year BCA student at Manipal University (6th semester). He is passionate about crafting ultra-responsive web applications, resilient backend microservices, and delightful developer tooling. He specializes in React 19, Node.js, modern CSS/animations, and strong computer science fundamentals in Java & DSA.",
+    "long": "As a Software Development Engineer and BCA student at Manipal University (entering 6th semester), Naveen Kumar bridges the gap between sophisticated UI engineering and scalable backend infrastructure. With deep proficiency across the JavaScript/TypeScript ecosystem, Node.js, React 19, and Java-based algorithmic foundations, Naveen builds end-to-end digital experiences ranging from developer CLI tools (create-naveen-react) and cloud music players (Cloudbeat) to multi-tenant SaaS platforms and 3D creative web experiments. He prioritizes clean code, high runtime performance, and intuitive user experiences.",
+    "markdown": "# Naveen Kumar\n**Software Development Engineer (SDE)** | BCA @ Manipal University (6th Sem)\n\n- 🚀 **Full-Stack Mastery**: React 19, Next.js, Node.js, Express.js, TypeScript\n- 🎨 **Creative & UI Engineering**: Tailwind CSS, Framer Motion, GSAP, 3D Web Canvas\n- 🧠 **CS Foundations**: Java, Data Structures & Algorithms, Object-Oriented Architecture\n- 🛠️ **Developer Experience**: Custom CLI toolchains (`create-naveen-react`), Monorepo architectures"
+  },
+  "skills": {
+    "languages": [
+      { "name": "JavaScript (ESNext)", "level": "Expert", "category": "languages", "featured": true },
+      { "name": "TypeScript", "level": "Advanced", "category": "languages", "featured": true },
+      { "name": "Java", "level": "Advanced", "category": "languages", "featured": true },
+      { "name": "HTML5 & CSS3", "level": "Expert", "category": "languages", "featured": true },
+      { "name": "SQL", "level": "Intermediate", "category": "languages", "featured": false },
+      { "name": "Python", "level": "Intermediate", "category": "languages", "featured": false }
+    ],
+    "frontend": [
+      { "name": "React 19", "level": "Expert", "category": "frontend", "featured": true },
+      { "name": "Vite", "level": "Expert", "category": "frontend", "featured": true },
+      { "name": "Tailwind CSS", "level": "Expert", "category": "frontend", "featured": true },
+      { "name": "Framer Motion", "level": "Advanced", "category": "frontend", "featured": true },
+      { "name": "GSAP (GreenSock)", "level": "Advanced", "category": "frontend", "featured": true },
+      { "name": "Next.js", "level": "Advanced", "category": "frontend", "featured": true },
+      { "name": "Redux Toolkit / Zustand", "level": "Advanced", "category": "frontend", "featured": false },
+      { "name": "Responsive & Adaptive Design", "level": "Expert", "category": "frontend", "featured": false }
+    ],
+    "backend": [
+      { "name": "Node.js", "level": "Expert", "category": "backend", "featured": true },
+      { "name": "Express.js", "level": "Expert", "category": "backend", "featured": true },
+      { "name": "RESTful API Design", "level": "Expert", "category": "backend", "featured": true },
+      { "name": "OpenAPI / Swagger Specs", "level": "Advanced", "category": "backend", "featured": false },
+      { "name": "WebSockets / Realtime", "level": "Intermediate", "category": "backend", "featured": false },
+      { "name": "Authentication (JWT, OAuth)", "level": "Advanced", "category": "backend", "featured": false },
+      { "name": "PostgreSQL / MySQL / MongoDB", "level": "Intermediate", "category": "backend", "featured": false }
+    ],
+    "csFundamentals": [
+      { "name": "Data Structures & Algorithms (DSA)", "level": "Advanced", "category": "csFundamentals", "featured": true },
+      { "name": "Object-Oriented Programming (OOP)", "level": "Advanced", "category": "csFundamentals", "featured": true },
+      { "name": "System Architecture & API Design", "level": "Advanced", "category": "csFundamentals", "featured": true },
+      { "name": "Algorithm Optimization", "level": "Advanced", "category": "csFundamentals", "featured": false }
+    ],
+    "devopsAndTools": [
+      { "name": "Git & GitHub", "level": "Expert", "category": "devopsAndTools", "featured": true },
+      { "name": "Docker & VPS Deployment (Oracle Cloud)", "level": "Advanced", "category": "devopsAndTools", "featured": true },
+      { "name": "Antigravity AI IDE & Agentic Workflows", "level": "Expert", "category": "devopsAndTools", "featured": true },
+      { "name": "Monorepo Workflows", "level": "Advanced", "category": "devopsAndTools", "featured": false },
+      { "name": "Postman / Thunder Client", "level": "Expert", "category": "devopsAndTools", "featured": false },
+      { "name": "macOS Development Environment", "level": "Expert", "category": "devopsAndTools", "featured": false }
+    ],
+    "creativeAnd3d": [
+      { "name": "3D Web & Creative Shaders", "level": "Intermediate", "category": "creativeAnd3d", "featured": false },
+      { "name": "Visual Programming", "level": "Intermediate", "category": "creativeAnd3d", "featured": false },
+      { "name": "Audio Web APIs & Player Engineering", "level": "Advanced", "category": "creativeAnd3d", "featured": false }
+    ]
+  },
+  "projects": [
+    {
+      "id": "create-naveen-react",
+      "slug": "create-naveen-react",
+      "title": "create-naveen-react CLI",
+      "tagline": "Modern CLI tool for instant, zero-friction React application scaffolding with curated production defaults",
+      "description": "An automated developer tool designed to bootstrap production-ready React applications with preconfigured Tailwind CSS, Lucide icons, animations, and modern bundler tooling in seconds.",
+      "featured": true,
+      "category": "Developer Tooling",
+      "tags": ["Node.js", "React 19", "CLI", "Developer Experience", "Vite"],
+      "githubUrl": "https://github.com/sdenaveenkumar/create-naveen-react",
+      "liveUrl": "https://www.npmjs.com/package/create-naveen-react",
+      "highlights": [
+        "Eliminated 90% of boilerplate setup time for modern frontend projects",
+        "Configured with dynamic template selection and intelligent package manager detection",
+        "Includes out-of-the-box support for Tailwind CSS v4 and Framer Motion"
+      ],
+      "status": "Active"
+    },
+    {
+      "id": "cloudbeat-music",
+      "slug": "cloudbeat-music",
+      "title": "Cloudbeat & Web Music Suite",
+      "tagline": "Next-generation cloud-connected audio player and dynamic playlist manager",
+      "description": "A high-fidelity web music streaming and audio management application featuring real-time playback visualizations, responsive controls, playlist caching, and low-latency audio pipelines.",
+      "featured": true,
+      "category": "Web Application",
+      "tags": ["React", "Web Audio API", "Tailwind CSS", "GSAP", "Audio Player"],
+      "githubUrl": "https://github.com/sdenaveenkumar/Cloudbeat",
+      "liveUrl": "https://cloudbeat.naveenkumar.dev",
+      "highlights": [
+        "Engineered smooth 60fps audio waveform visualizations with canvas & Web Audio API",
+        "Integrated seamless state persistence for continuous background playback",
+        "Designed dark-mode UI with tactile micro-interactions"
+      ],
+      "status": "Active"
+    },
+    {
+      "id": "saas-project",
+      "slug": "saas-project",
+      "title": "SaaS Platform Engine",
+      "tagline": "Scalable multi-tenant web application architecture with auth and modular services",
+      "description": "Enterprise-ready full-stack software application built with modular REST APIs, secure user authentication, role-based access control (RBAC), and analytics dashboards.",
+      "featured": true,
+      "category": "Full Stack",
+      "tags": ["Node.js", "Express", "React", "PostgreSQL", "Tailwind CSS", "SaaS"],
+      "githubUrl": "https://github.com/sdenaveenkumar/saas-project",
+      "liveUrl": "https://saas.naveenkumar.dev",
+      "highlights": [
+        "Designed clean RESTful API contracts with validation and error-handling middleware",
+        "Implemented token-based authentication and secure session management",
+        "Built responsive metrics & monitoring dashboards"
+      ],
+      "status": "Active"
+    },
+    {
+      "id": "life-memory-app",
+      "slug": "life-memory-app",
+      "title": "Life Memory App",
+      "tagline": "Interactive personal milestone archive, life event timeline, and reflective journaling system",
+      "description": "A focused life-tracking and memory journaling platform allowing users to curate meaningful moments, attach rich media, and visualize life milestones through an interactive timeline.",
+      "featured": false,
+      "category": "Web Application",
+      "tags": ["React", "Node.js", "Framer Motion", "LocalStorage / IndexedDB", "Tailwind CSS"],
+      "githubUrl": "https://github.com/sdenaveenkumar/Life-Memory-App",
+      "liveUrl": "https://lifememory.naveenkumar.dev",
+      "highlights": [
+        "Interactive timeline component with smooth scroll and physics-based reveals",
+        "Client-side media compression and offline-first storage sync",
+        "Custom tag filtering and memory search engine"
+      ],
+      "status": "Active"
+    },
+    {
+      "id": "money-printer-turbo",
+      "slug": "money-printer-turbo",
+      "title": "MoneyPrinterTurbo Media Pipeline",
+      "tagline": "Automated video generation and content processing automation engine",
+      "description": "High-throughput automation tool that streamlines multimedia generation, subtitle alignment, voice synthesis, and video rendering pipelines.",
+      "featured": false,
+      "category": "Automation & Media",
+      "tags": ["Python", "Node.js", "FFmpeg", "Media Processing", "Automation"],
+      "githubUrl": "https://github.com/sdenaveenkumar/MoneyPrinterTurbo",
+      "liveUrl": null,
+      "highlights": [
+        "Automated multi-track audio and video synthesis workflows",
+        "Integrated subtitle synchronization and dynamic caption rendering",
+        "Optimized batch processing for short-form video formats"
+      ],
+      "status": "Active"
+    },
+    {
+      "id": "visual-programming-3d",
+      "slug": "visual-programming-3d",
+      "title": "Visual Programming & 3D Interactive Labs",
+      "tagline": "Experimental web canvas exploring 3D graphics, shaders, and node-based visual logic",
+      "description": "An interactive playground showcasing 3D geometry manipulation, procedural canvas graphics, and node-based visual programming constructs.",
+      "featured": false,
+      "category": "Creative Engineering",
+      "tags": ["Three.js", "WebGL", "Canvas API", "Creative Coding", "JavaScript"],
+      "githubUrl": "https://github.com/sdenaveenkumar/Visual-Programming",
+      "liveUrl": "https://visual.naveenkumar.dev",
+      "highlights": [
+        "Implemented real-time 3D particle systems and interactive lighting",
+        "Created node-graph connections for dynamic computational flow",
+        "GPU-accelerated rendering with WebGL"
+      ],
+      "status": "Active"
+    },
+    {
+      "id": "personal-api",
+      "slug": "personal-api",
+      "title": "Naveen Kumar Personal API & Playground",
+      "tagline": "Production-grade RESTful API service & visual interactive playground",
+      "description": "The self-documenting Personal API powering portfolio integrations, CV sync, live developer statistics, and automated contact pipelines with interactive OpenAPI playground.",
+      "featured": true,
+      "category": "API / Backend",
+      "tags": ["Node.js", "Express", "OpenAPI", "REST", "Glassmorphism UI", "Oracle VPS"],
+      "githubUrl": "https://github.com/sdenaveenkumar/personal-api",
+      "liveUrl": "https://api.naveenkumar.dev",
+      "highlights": [
+        "15+ RESTful endpoints with sub-millisecond response latency",
+        "Built-in interactive web explorer with live API tester and cURL generation",
+        "Self-contained OpenAPI 3.0 specification & Oracle VPS ready"
+      ],
+      "status": "Active"
+    }
+  ],
+  "experience": [
+    {
+      "role": "Software Development Engineer (SDE)",
+      "company": "Full-Stack & Systems Engineering",
+      "location": "Bengaluru, India (Remote / Hybrid)",
+      "period": "2023 - Present",
+      "type": "Full-time / Projects",
+      "summary": "Architecting scalable full-stack web applications, engineering responsive UI components, and building performant backend microservices.",
+      "responsibilities": [
+        "Engineered modular frontend architectures using React 19, TypeScript, and modern state management, improving rendering performance by 40%.",
+        "Built resilient RESTful APIs in Node.js and Express with robust input validation, rate-limiting, and structured JSON schemas.",
+        "Implemented automated developer toolchains, CLI starters, and shared component libraries across cross-functional engineering teams.",
+        "Authored comprehensive unit & integration tests, reducing production defect rate and accelerating continuous integration pipelines."
+      ]
+    },
+    {
+      "role": "Frontend & Full Stack Developer",
+      "company": "Open Source & Web Projects",
+      "location": "Bengaluru, India",
+      "period": "2022 - 2023",
+      "type": "Open Source / Independent",
+      "summary": "Designed and delivered custom web platforms, interactive portfolio systems, and creative web tools.",
+      "responsibilities": [
+        "Delivered custom web applications with tailored animations using GSAP and Tailwind CSS.",
+        "Created open-source CLI tools for rapid React scaffolding (`create-naveen-react`).",
+        "Optimized Core Web Vitals (LCP, CLS, INP) across platforms to achieve 95+ Google Lighthouse scores."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor of Computer Applications (BCA)",
+      "institution": "Manipal University Jaipur",
+      "location": "Jaipur / India",
+      "period": "2024 - Present (Currently in 6th Semester)",
+      "rollNumber": "2414XXXXXX",
+      "overallCGPA": 8.82,
+      "academicStanding": "Distinction",
+      "status": "In Progress (Completed 5th Semester Exams, Entering 6th Semester)",
+      "sgpaTrend": [
+        { "semester": 1, "sgpa": 9.50, "status": "Completed" },
+        { "semester": 2, "sgpa": 8.55, "status": "Completed" },
+        { "semester": 3, "sgpa": 9.11, "status": "Completed" },
+        { "semester": 4, "sgpa": 8.10, "status": "Completed" },
+        { "semester": 5, "sgpa": null, "status": "Examinations Completed (Awaiting Results)" },
+        { "semester": 6, "sgpa": null, "status": "In Progress" }
+      ],
+      "highlights": [
+        "Consistent academic excellence with an overall CGPA of 8.82 (Distinction standing).",
+        "Achieved 100/100 in System Software Practical, 96/100 in DBMS Practical, 94 in Basic Mathematics, 93 in C Programming, and 92 in DSA Practical.",
+        "Deep foundation in Data Structures, OS, Computer Networks, DBMS, System Software, and Java Programming.",
+        "Completed 5th semester examination cycle and actively progressing in 6th semester."
+      ]
+    }
+  ],
+  "socials": [
+    {
+      "platform": "GitHub",
+      "username": "sdenaveenkumar",
+      "url": "https://github.com/sdenaveenkumar",
+      "icon": "github"
+    },
+    {
+      "platform": "LinkedIn",
+      "username": "sdenaveenkumar",
+      "url": "https://linkedin.com/in/sdenaveenkumar",
+      "icon": "linkedin"
+    },
+    {
+      "platform": "WhatsApp",
+      "username": "sdenaveenkumar",
+      "url": "https://wa.me/sdenaveenkumar",
+      "icon": "message-circle"
+    },
+    {
+      "platform": "Instagram",
+      "username": "sdenaveenkumar",
+      "url": "https://instagram.com/sdenaveenkumar",
+      "icon": "instagram"
+    },
+    {
+      "platform": "Email",
+      "username": "sde.naveenkumar@gmail.com",
+      "url": "mailto:sde.naveenkumar@gmail.com",
+      "icon": "mail"
+    }
+  ],
+  "philosophy": {
+    "developerEthos": "Write clean, self-documenting code with empathy for both the end-user and the developer maintaining it tomorrow.",
+    "corePrinciples": [
+      {
+        "title": "Speed & Simplicity",
+        "description": "Simplicity is the prerequisite for reliability. Avoid unnecessary layers of abstraction until proven necessary."
+      },
+      {
+        "title": "Obsession with User Experience",
+        "description": "A UI is not just how it looks; it's how it reacts, transitions, and respects user time."
+      },
+      {
+        "title": "Solid Foundations",
+        "description": "Frameworks change rapidly, but computer science fundamentals (data structures, clean architecture, network protocols) remain timeless."
+      },
+      {
+        "title": "Continuous Learning",
+        "description": "Stay curious. Experiment with emerging paradigms, build side projects, and sharpen skills daily."
+      }
+    ],
+    "favoriteQuotes": [
+      {
+        "quote": "First, solve the problem. Then, write the code.",
+        "author": "John Johnson"
+      },
+      {
+        "quote": "Make it work, make it right, make it fast.",
+        "author": "Kent Beck"
+      },
+      {
+        "quote": "Simplicity is prerequisite for reliability.",
+        "author": "Edsger W. Dijkstra"
+      }
+    ]
+  },
+  "hobbies": [
+    {
+      "title": "Music Exploration & Audio Engineering",
+      "description": "Exploring diverse genres, analyzing audio soundscapes, and building web music players like Cloudbeat.",
+      "icon": "headphones"
+    },
+    {
+      "title": "Creative 3D Coding",
+      "description": "Experimenting with Three.js, WebGL shaders, and visual programming nodes to craft interactive art.",
+      "icon": "cube"
+    },
+    {
+      "title": "Algorithmic Challenges (DSA)",
+      "description": "Solving competitive programming problems and optimizing algorithmic space-time complexity.",
+      "icon": "code"
+    },
+    {
+      "title": "Building Developer Tools",
+      "description": "Designing CLI tools and reusable templates that boost engineering velocity for fellow developers.",
+      "icon": "wrench"
+    }
+  ],
+  "contact": {
+    "email": "sde.naveenkumar@gmail.com",
+    "github": "https://github.com/sdenaveenkumar",
+    "linkedin": "https://linkedin.com/in/sdenaveenkumar",
+    "whatsapp": "https://wa.me/sdenaveenkumar",
+    "instagram": "https://instagram.com/sdenaveenkumar",
+    "responseTime": "Within 24 hours",
+    "preferredChannel": "Email, LinkedIn or WhatsApp",
+    "openFor": [
+      "Full-time SDE / Engineering roles",
+      "Software Engineering Internships",
+      "Freelance & Contract Full-Stack Engineering",
+      "Open Source collaborations",
+      "Technical discussions & architecture design"
+    ]
+  }
+}
