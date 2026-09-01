@@ -10,7 +10,7 @@ import apiV1Routes from './routes/index.js';
 import { rateLimiter } from './middleware/rateLimiter.js';
 import { responseTimer } from './middleware/responseTimer.js';
 import { notFoundHandler, errorHandler } from './middleware/errorHandler.js';
-import openApiSpec from './data/openapi.json' with { type: 'json' };
+import { openApiSpec } from './data/loader.js';
 import { config } from './config/config.js';
 
 const __filename = fileURLToPath(import.meta.url);

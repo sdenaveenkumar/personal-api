@@ -1,4 +1,4 @@
-import academicsData from '../data/academics.json' with { type: 'json' };
+import { academicsData } from '../data/loader.js';
 
 export const getAcademics = (req, res) => {
   res.json({

@@ -1,4 +1,4 @@
-import profileData from '../data/profile.json' with { type: 'json' };
+import { profileData } from '../data/loader.js';
 
 const receivedMessages = [];
 

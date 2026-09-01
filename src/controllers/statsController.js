@@ -1,6 +1,6 @@
 import os from 'os';
 import { config } from '../config/config.js';
-import profileData from '../data/profile.json' with { type: 'json' };
+import { profileData } from '../data/loader.js';
 
 function formatUptime(seconds) {
   const d = Math.floor(seconds / (3600 * 24));

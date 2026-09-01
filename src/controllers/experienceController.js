@@ -1,4 +1,4 @@
-import profileData from '../data/profile.json' with { type: 'json' };
+import { profileData } from '../data/loader.js';
 
 export const getExperience = (req, res) => {
   const { type } = req.query; // 'Full-time', 'Contract', etc.
