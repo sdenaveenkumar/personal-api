@@ -3,7 +3,7 @@ import { config } from './config/config.js';
 
 const app = createApp();
 
-const server = app.listen(config.port, () => {
+const server = app.listen(config.port, '0.0.0.0', () => {
   console.log(`\n======================================================`);
   console.log(`🚀 ${config.appName} is running!`);
   console.log(`📡 Base API:      http://localhost:${config.port}/api/v1`);
