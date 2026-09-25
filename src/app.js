@@ -9,6 +9,7 @@ import { fileURLToPath } from 'url';
 import apiV1Routes from './routes/index.js';
 import { rateLimiter } from './middleware/rateLimiter.js';
 import { responseTimer } from './middleware/responseTimer.js';
+import { requestId } from './middleware/requestId.js';
 import { notFoundHandler, errorHandler } from './middleware/errorHandler.js';
 import { openApiSpec } from './data/loader.js';
 import { config } from './config/config.js';
@@ -103,6 +104,9 @@ export function getDirectoryIndex(req) {
 export function createApp() {
   const app = express();
 
+  // Hide server fingerprinting
+  app.disable('x-powered-by');
+
   // Basic Security & Headers
   app.use(
     helmet({
@@ -113,15 +117,29 @@ export function createApp() {
           styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com", "https://cdn.jsdelivr.net"],
           fontSrc: ["'self'", "https://fonts.gstatic.com"],
           imgSrc: ["'self'", "data:", "https://api.dicebear.com", "https://images.unsplash.com"],
-          connectSrc: ["'self'"]
+          connectSrc: ["'self'"],
+          upgradeInsecureRequests: null
         }
       },
       crossOriginEmbedderPolicy: false
     })
   );
 
+  // Additional Security: Strict Permissions-Policy
+  app.use((req, res, next) => {
+    res.setHeader('Permissions-Policy', 'camera=(), microphone=(), geolocation=(), payment=()');
+    next();
+  });
+
   // Enable CORS
-  app.use(cors());
+  app.use(
+    cors({
+      exposedHeaders: ['X-Response-Time', 'X-Request-Id']
+    })
+  );
+
+  // Request ID for distributed tracing & observability
+  app.use(requestId);
 
   // Response Compression
   app.use(compression());
@@ -134,9 +152,9 @@ export function createApp() {
   // Response latency measurement
   app.use(responseTimer);
 
-  // JSON and URL-encoded body parsers
-  app.use(express.json({ limit: '1mb' }));
-  app.use(express.urlencoded({ extended: true, limit: '1mb' }));
+  // JSON and URL-encoded body parsers (tightened to 100kb against payload flooding)
+  app.use(express.json({ limit: '100kb' }));
+  app.use(express.urlencoded({ extended: true, limit: '100kb' }));
 
   // Static Assets for Visual API Explorer UI (excluding auto index)
   app.use(express.static(path.join(__dirname, 'public'), { index: false }));
@@ -148,6 +166,7 @@ export function createApp() {
   app.get('/health', (req, res) => {
     res.json({
       status: 'healthy',
+      requestId: req.id,
       timestamp: new Date().toISOString(),
       uptime: process.uptime()
     });
@@ -159,7 +178,7 @@ export function createApp() {
   });
 
   // Dedicated Documentation Explorer route
-  app.get('/docs', (req, res) => {
+  app.get(['/docs', '/docs/'], (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
   });
 

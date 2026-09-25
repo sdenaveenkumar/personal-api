@@ -13,6 +13,11 @@ const server = app.listen(config.port, '0.0.0.0', () => {
   console.log(`======================================================\n`);
 });
 
+// Protect against Slowloris and connection starvation attacks
+server.headersTimeout = 65000;
+server.keepAliveTimeout = 61000;
+server.requestTimeout = 30000;
+
 // Graceful shutdown handling
 process.on('SIGTERM', () => {
   console.log('SIGTERM signal received. Shutting down gracefully...');

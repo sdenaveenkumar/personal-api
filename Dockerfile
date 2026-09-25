@@ -10,7 +10,7 @@ ENV PORT=3000
 
 # Copy package files and install production dependencies
 COPY package*.json ./
-RUN npm ci --only=production
+RUN npm ci --omit=dev
 
 # Copy application source code
 COPY . .

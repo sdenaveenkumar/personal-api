@@ -160,3 +160,64 @@ test('POST /api/v1/contact validates payload and records message', async () => {
   });
   assert.equal(resGood.status, 201);
 });
+
+test('Observability: X-Request-Id is generated and propagated for distributed tracing', async () => {
+  // Test 1: Automatically generated UUID
+  const res1 = await fetch(`${baseUrl}/health`);
+  assert.equal(res1.status, 200);
+  const reqId1 = res1.headers.get('x-request-id');
+  assert.ok(reqId1, 'X-Request-Id header must be present');
+  // Check UUID format (8-4-4-4-12 hex characters)
+  const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+  assert.ok(uuidRegex.test(reqId1), 'X-Request-Id must be a valid UUID');
+
+  // Test 2: Custom Request ID is preserved
+  const customId = 'trace-id-portfolio-12345';
+  const res2 = await fetch(`${baseUrl}/api/v1/profile`, {
+    headers: { 'X-Request-Id': customId }
+  });
+  assert.equal(res2.status, 200);
+  assert.equal(res2.headers.get('x-request-id'), customId, 'Custom X-Request-Id must be propagated');
+});
+
+test('Security: Headers verify server cloaking, permissions policy, and no-sniff', async () => {
+  const res = await fetch(`${baseUrl}/health`);
+  assert.equal(res.status, 200);
+  assert.equal(res.headers.get('x-powered-by'), null, 'X-Powered-By header must be disabled to prevent fingerprinting');
+  assert.ok(res.headers.get('permissions-policy'), 'Permissions-Policy header must be present');
+  assert.equal(res.headers.get('x-content-type-options'), 'nosniff');
+});
+
+test('Security: Honeypot bot protection rejects automated spam', async () => {
+  const resHoneypot = await fetch(`${baseUrl}/api/v1/contact`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      name: 'Spam Bot',
+      email: 'bot@spam.com',
+      message: 'Buy crypto now',
+      _gotcha: 'http://spam.io'
+    })
+  });
+  assert.equal(resHoneypot.status, 400);
+  const data = await resHoneypot.json();
+  assert.equal(data.error.code, 'BOT_DETECTED');
+});
+
+test('Security: Contact endpoint sanitizes HTML tags and control characters', async () => {
+  const res = await fetch(`${baseUrl}/api/v1/contact`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      name: '<script>alert("XSS")</script>Naveen Fan',
+      email: 'secure.fan@manipal.edu',
+      subject: '<b>Hi</b>',
+      message: 'Hello <img src=x onerror=alert(1)> from client!'
+    })
+  });
+  assert.equal(res.status, 201);
+  const data = await res.json();
+  assert.equal(data.data.name, 'Naveen Fan', 'Script tags must be stripped');
+  assert.equal(data.data.subject, 'Hi', 'HTML tags must be stripped');
+  assert.ok(!data.data.message.includes('<img'), 'Image/XSS tags must be stripped');
+});

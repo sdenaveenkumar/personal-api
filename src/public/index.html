@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Naveen Kumar | Personal API & Interactive Explorer</title>
-  <meta name="description" content="Production-grade Personal REST API and Interactive Playground for Naveen Kumar (Software Development Engineer). Explore endpoints, run live queries, and inspect documentation.">
+  <meta name="description" content="Production-grade Personal REST API and Interactive Playground for Naveen Kumar (Software Development Engineer). Explore endpoints, run live queries, visual previews, and inspect OpenAPI telemetry.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/style.css">
 </head>
 <body>
   <div class="bg-glow"></div>
@@ -18,22 +18,36 @@
     <!-- Header / Hero Section -->
     <header class="hero-header">
       <div class="brand-row">
-        <div class="badge-status">
-          <span class="status-dot"></span>
-          <span class="status-text">API v1.0 • ONLINE</span>
+        <div class="brand-status-cluster">
+          <div class="badge-status">
+            <span class="status-dot"></span>
+            <span class="status-text">API v1.0 • ONLINE</span>
+          </div>
+          <div class="badge-uptime" id="header-uptime-badge" title="Live Server Uptime">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <span id="uptime-ticker">Uptime: calculating...</span>
+          </div>
+          <div class="badge-shortcut-hint" title="Keyboard Navigation">
+            <kbd>⌘</kbd>+<kbd>↵</kbd> Execute &nbsp;•&nbsp; <kbd>/</kbd> Search
+          </div>
         </div>
+
         <div class="header-links">
+          <button class="nav-link theme-toggle-btn" id="theme-toggle-btn" title="Switch to Dark Mode">
+            <svg class="theme-icon moon-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            <span id="theme-mode-text">Dark Mode</span>
+          </button>
           <a href="/openapi.json" target="_blank" class="nav-link" id="openapi-link">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-            OpenAPI Spec
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            <span>OpenAPI 3.0</span>
           </a>
           <a href="/health" target="_blank" class="nav-link" id="health-link">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
-            Health
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+            <span>Health</span>
           </a>
           <a href="https://github.com/sdenaveenkumar" target="_blank" class="nav-link nav-github" id="github-profile-link">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-            @sdenaveenkumar
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            <span>@sdenaveenkumar</span>
           </a>
         </div>
       </div>
@@ -48,31 +62,44 @@
           <div class="profile-title-group">
             <h1 class="dev-name">Naveen Kumar</h1>
             <span class="role-tag">Software Development Engineer</span>
-            <span class="role-tag" style="background: rgba(6, 182, 212, 0.15); border-color: rgba(6, 182, 212, 0.35); color: #38bdf8;">BCA @ Manipal University (6th Sem)</span>
+            <span class="role-tag academic-badge">BCA @ Manipal University (8.82 CGPA • Distinction)</span>
           </div>
           <p class="dev-tagline">
-            Specializing in React 19, Node.js, creative frontend engineering, and scalable full-stack web architectures.
+            Specializing in React 19, Node.js microservices, creative frontend engineering, and high-performance full-stack architectures.
           </p>
           <div class="quick-meta-pills">
-            <span class="meta-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> Bengaluru, India</span>
-            <span class="meta-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> UTC+5:30 (IST)</span>
-            <span class="meta-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg> sde.naveenkumar@gmail.com</span>
+            <span class="meta-pill"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> Bengaluru, India</span>
+            <span class="meta-pill"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> UTC+5:30 (IST)</span>
+            <span class="meta-pill"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg> sde.naveenkumar@gmail.com</span>
             <span class="meta-pill badge-available">● Open to SDE Opportunities</span>
           </div>
         </div>
       </div>
 
-      <!-- Quick cURL Banner -->
-      <div class="quick-curl-card">
-        <div class="curl-label">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
-          Quick Query:
+      <!-- Quick cURL Banner & Recent Queries Bar -->
+      <div class="header-utility-row">
+        <div class="quick-curl-card">
+          <div class="curl-label">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+            <span>Quick Query:</span>
+          </div>
+          <code class="curl-code" id="quick-curl-text">curl -s http://localhost:3000/api/v1/profile | jq</code>
+          <button class="btn-copy-curl" id="btn-copy-quick-curl" title="Copy to clipboard">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <span>Copy</span>
+          </button>
         </div>
-        <code class="curl-code" id="quick-curl-text">curl -s http://localhost:3000/api/v1/profile | jq</code>
-        <button class="btn-copy-curl" id="btn-copy-quick-curl" title="Copy to clipboard">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          Copy
-        </button>
+
+        <!-- History Pill Strip -->
+        <div class="history-strip" id="history-strip">
+          <div class="history-label">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+            <span>Recent:</span>
+          </div>
+          <div class="history-chips" id="history-chips">
+            <span class="history-empty">No requests yet</span>
+          </div>
+        </div>
       </div>
     </header>
 
@@ -82,11 +109,22 @@
       <aside class="sidebar-panel">
         <div class="search-wrap">
           <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-          <input type="text" id="endpoint-search" placeholder="Filter endpoints (e.g. skills, projects)..." autocomplete="off">
+          <input type="text" id="endpoint-search" placeholder="Filter endpoints (Press '/' to focus)..." autocomplete="off">
+          <span class="search-count-badge" id="search-count-badge">21</span>
+        </div>
+
+        <!-- Category Quick Pills -->
+        <div class="cat-filter-pills" id="cat-filter-pills">
+          <button class="cat-pill active" data-cat="all">All</button>
+          <button class="cat-pill" data-cat="Identity & Profile">Profile</button>
+          <button class="cat-pill" data-cat="Academics & Marks Ledger">Academics</button>
+          <button class="cat-pill" data-cat="Technical Stack">Skills</button>
+          <button class="cat-pill" data-cat="Projects & Tooling">Projects</button>
+          <button class="cat-pill" data-cat="System & Insights">System</button>
         </div>
 
         <nav class="endpoint-nav" id="endpoint-nav-list">
-          <!-- Dynamically populated or rendered list -->
+          <!-- Dynamically populated endpoint tree -->
         </nav>
       </aside>
 
@@ -98,32 +136,44 @@
             <div class="endpoint-route-box">
               <span class="method-badge" id="active-method">GET</span>
               <span class="route-path" id="active-path">/api/v1/profile</span>
+              <span class="endpoint-tag" id="active-category-tag">Identity</span>
             </div>
             <p class="endpoint-desc" id="active-desc">Naveen's identity, title, location, status, and summary</p>
           </div>
 
           <!-- Query Parameters & Body Editor (if applicable) -->
           <div class="request-config-section" id="params-container">
-            <div class="section-title">Query Parameters</div>
+            <div class="section-title-row">
+              <span class="section-title">Query Parameters</span>
+              <span class="section-hint">Optional URL filters & criteria</span>
+            </div>
             <div class="params-grid" id="params-inputs">
               <!-- Dynamically populated parameters -->
             </div>
           </div>
 
           <div class="request-config-section hidden" id="body-container">
-            <div class="section-title">JSON Request Body</div>
+            <div class="section-title-row">
+              <span class="section-title">JSON Request Body</span>
+              <span class="section-hint">application/json</span>
+            </div>
             <textarea class="body-textarea" id="body-input" rows="5" placeholder='{"name": "Jane", "email": "jane@example.com", "message": "Hi Naveen..."}'></textarea>
           </div>
 
-          <!-- Execution Controls -->
+          <!-- Execution Controls & Real-time Telemetry -->
           <div class="action-bar">
-            <button class="btn-primary" id="btn-send-request">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-              <span>Execute Request</span>
-            </button>
+            <div class="action-btn-group">
+              <button class="btn-primary" id="btn-send-request" title="Execute Request (⌘ + Enter)">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                <span>Execute Request</span>
+                <span class="btn-kbd-shortcut">⌘↵</span>
+              </button>
+            </div>
+
             <div class="status-metrics" id="status-metrics">
               <span class="metric-pill metric-status" id="res-status-pill">Ready</span>
-              <span class="metric-pill metric-time" id="res-time-pill">0 ms</span>
+              <span class="metric-pill metric-time" id="res-time-pill" title="Server response time">0 ms</span>
+              <span class="metric-pill metric-size" id="res-size-pill" title="Payload size">0 B</span>
             </div>
           </div>
 
@@ -132,51 +182,147 @@
             <div class="snippet-tabs">
               <button class="tab-btn active" data-lang="curl">cURL</button>
               <button class="tab-btn" data-lang="fetch">JavaScript (fetch)</button>
+              <button class="tab-btn" data-lang="axios">Node.js (Axios)</button>
               <button class="tab-btn" data-lang="python">Python (requests)</button>
+              <button class="tab-btn" data-lang="go">Go (net/http)</button>
+              <button class="tab-btn" data-lang="rust">Rust (reqwest)</button>
               <div class="tab-actions">
-                <button class="btn-copy-code" id="btn-copy-snippet">
+                <button class="btn-copy-code" id="btn-copy-snippet" title="Copy code snippet">
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-                  Copy Snippet
+                  <span>Copy Snippet</span>
                 </button>
               </div>
             </div>
             <pre class="snippet-code"><code id="snippet-display">curl -X GET "http://localhost:3000/api/v1/profile"</code></pre>
           </div>
 
-          <!-- Response Viewer -->
+          <!-- Response Section with Multi-View Modes -->
           <div class="response-section">
             <div class="response-header">
-              <div class="response-title">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-                Response Payload (JSON)
+              <!-- View Mode Tabs: Visual Preview vs Raw JSON vs Headers vs Schema -->
+              <div class="response-view-selector">
+                <button class="res-view-btn active" id="view-tab-visual" data-view="visual">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                  <span>Visual Preview</span>
+                </button>
+                <button class="res-view-btn" id="view-tab-json" data-view="json">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                  <span>Raw JSON</span>
+                </button>
+                <button class="res-view-btn" id="view-tab-headers" data-view="headers">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                  <span>Headers & Telemetry</span>
+                </button>
+                <button class="res-view-btn" id="view-tab-schema" data-view="schema">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                  <span>OpenAPI Schema</span>
+                </button>
               </div>
-              <button class="btn-copy-code" id="btn-copy-response">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-                Copy JSON
-              </button>
+
+              <!-- Response Action Tools -->
+              <div class="response-actions">
+                <div class="json-filter-wrap hidden" id="json-filter-wrap">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                  <input type="text" id="json-search-input" placeholder="Search JSON keys/values..." autocomplete="off">
+                </div>
+                <button class="btn-copy-code" id="btn-copy-response" title="Copy response to clipboard">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                  <span>Copy JSON</span>
+                </button>
+                <button class="btn-copy-code" id="btn-download-response" title="Download response as .json">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                  <span>Download .json</span>
+                </button>
+              </div>
             </div>
-            <div class="response-viewer" id="response-viewer">
-              <pre><code id="response-code-display">// Click "Execute Request" above to trigger this endpoint live...</code></pre>
+
+            <!-- View 1: Visual Mode Preview Container -->
+            <div class="view-panel" id="view-panel-visual">
+              <div class="visual-container" id="visual-preview-container">
+                <div class="visual-placeholder">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                  <p>Execute an endpoint to render interactive visual cards...</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- View 2: Raw Syntax Highlighted JSON Container -->
+            <div class="view-panel hidden" id="view-panel-json">
+              <div class="response-viewer" id="response-viewer">
+                <pre><code id="response-code-display">// Click "Execute Request" above to trigger this endpoint live...</code></pre>
+              </div>
+            </div>
+
+            <!-- View 3: HTTP Headers & Telemetry Container -->
+            <div class="view-panel hidden" id="view-panel-headers">
+              <div class="telemetry-card" id="telemetry-display-container">
+                <div class="telemetry-status-box" id="telemetry-status-box">
+                  <div class="telemetry-code" id="tel-code">200 OK</div>
+                  <div class="telemetry-msg" id="tel-msg">Request completed successfully</div>
+                </div>
+                
+                <div class="telemetry-stats-grid">
+                  <div class="stat-box">
+                    <span class="stat-name">Roundtrip Latency</span>
+                    <span class="stat-val" id="tel-latency">0 ms</span>
+                  </div>
+                  <div class="stat-box">
+                    <span class="stat-name">Payload Size</span>
+                    <span class="stat-val" id="tel-size">0 B</span>
+                  </div>
+                  <div class="stat-box">
+                    <span class="stat-name">Content-Type</span>
+                    <span class="stat-val" id="tel-content-type">application/json</span>
+                  </div>
+                  <div class="stat-box">
+                    <span class="stat-name">HTTP Method & Path</span>
+                    <span class="stat-val" id="tel-endpoint">GET /api/v1/profile</span>
+                  </div>
+                </div>
+
+                <div class="headers-table-wrap">
+                  <div class="headers-title">Response Headers</div>
+                  <table class="headers-table" id="headers-table">
+                    <thead>
+                      <tr><th>Header</th><th>Value</th></tr>
+                    </thead>
+                    <tbody id="headers-tbody">
+                      <tr><td colspan="2" class="table-empty">Execute a request to view HTTP response headers</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <!-- View 4: OpenAPI Schema Container -->
+            <div class="view-panel hidden" id="view-panel-schema">
+              <div class="schema-doc-card" id="schema-doc-card">
+                <div class="schema-loading" id="schema-display">Loading OpenAPI 3.0 specification...</div>
+              </div>
             </div>
           </div>
         </div>
       </section>
     </main>
 
+    <!-- Floating Toast Notification System -->
+    <div class="toast-container" id="toast-container"></div>
+
     <!-- Footer -->
     <footer class="app-footer">
       <div class="footer-content">
-        <p>© 2026 Naveen Kumar (@sdenaveenkumar) • Software Development Engineer • Personal API Service</p>
+        <p>© 2026 Naveen Kumar (@sdenaveenkumar) • Software Development Engineer • Personal API & Visual Explorer</p>
         <div class="footer-badges">
           <span class="badge-tech">Node.js 26</span>
           <span class="badge-tech">Express</span>
           <span class="badge-tech">OpenAPI 3.0</span>
-          <span class="badge-tech">Oracle VPS Ready</span>
+          <span class="badge-tech">Visual Card Engine</span>
+          <span class="badge-tech">Oracle Cloud Ready</span>
         </div>
       </div>
     </footer>
   </div>
 
-  <script src="app.js"></script>
+  <script src="/app.js"></script>
 </body>
 </html>
